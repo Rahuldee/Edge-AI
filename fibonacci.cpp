@@ -27,14 +27,7 @@ int main(){
 	interpreter->typed_input_tensor<float>(0)[0] =13.0;
 	interpreter->typed_input_tensor<float>(0)[1] = 21.0;
 	interpreter->typed_input_tensor<float>(0)[2] = 34.0;
-	
-	
 		
-    //*input0 = {13.0,21.0,34.0};
-	//*input1 = 21.0;
-	//*input2 = 34.0;
-
-	
 	const std::vector<int> inputs = interpreter->inputs();
     const std::vector<int> outputs = interpreter->outputs();
 	
@@ -43,15 +36,12 @@ int main(){
     //std::cout << "input " <<  inputs[0] << "\r\n";
     std::cout << "number of inputs " <<  interpreter->inputs().size() <<"\r\n";
     std::cout << "number of outputs " << interpreter->outputs().size() << "\r\n";
-	//std::cout << "Dimension of input0 " << interpreter->tensor(input0)->dims << "\r\n";
 	
-    std::cout << "input(0) name: " <<  interpreter->GetInputName(0) << "\r\n";
+	std::cout << "input(0) name: " <<  interpreter->GetInputName(0) << "\r\n";
 	std::cout << "input(1) name: " <<  interpreter->GetInputName(1) << "\r\n";
 	std::cout << "input(2) name: " <<  interpreter->GetInputName(2) << "\r\n";
     std::cout << "output(0) name: " << interpreter->GetOutputName(0) << "\r\n";
 	std::cout << "output(1) name: " << interpreter->GetOutputName(1) << "\r\n";
-	
-    // Dummy input for testing
 	
 	
     interpreter->Invoke();
