@@ -24,9 +24,9 @@ int main(){
     interpreter->AllocateTensors();
 		
 	
-	interpreter->typed_input_tensor<float>(0)[0] =13.0;
-	interpreter->typed_input_tensor<float>(0)[1] = 21.0;
-	interpreter->typed_input_tensor<float>(0)[2] = 34.0;
+	float* input0 = interpreter->typed_input_tensor<float>(0)[0] ;
+	float* input0 = interpreter->typed_input_tensor<float>(0)[1] ;
+	float* input0 = interpreter->typed_input_tensor<float>(0)[2] ;
 		
 	const std::vector<int> inputs = interpreter->inputs();
     const std::vector<int> outputs = interpreter->outputs();
@@ -40,17 +40,19 @@ int main(){
 	std::cout << "input(0) name: " <<  interpreter->GetInputName(0) << "\r\n";
 	std::cout << "input(1) name: " <<  interpreter->GetInputName(1) << "\r\n";
 	std::cout << "input(2) name: " <<  interpreter->GetInputName(2) << "\r\n";
-    std::cout << "output(0) name: " << interpreter->GetOutputName(0) << "\r\n";
+    	std::cout << "output(0) name: " << interpreter->GetOutputName(0) << "\r\n";
 	std::cout << "output(1) name: " << interpreter->GetOutputName(1) << "\r\n";
+	
+	
 	
 	
     interpreter->Invoke();
 	
-    float output0 = interpreter->typed_output_tensor<float>(0)[0];
-	float output1 = interpreter->typed_output_tensor<float>(0)[1];
+    float* output0 = interpreter->typed_output_tensor<float>(0)[0];
+	float* output1 = interpreter->typed_output_tensor<float>(0)[1];
 
-    printf("Result is: %f\n", output0);
-	printf("Result is: %f\n", output1);
+    printf("Result is: %f\n", *output0);
+	printf("Result is: %f\n", *output1);
 
     return 0;
 
