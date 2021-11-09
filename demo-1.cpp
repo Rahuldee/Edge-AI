@@ -31,3 +31,4 @@ int main(){
     printf("Result is: %f\n", *output);
 
     return 0;
+}
