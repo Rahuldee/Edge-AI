@@ -28,8 +28,8 @@ int main(){
 	float* input0 = interpreter->typed_input_tensor<float>(0)[1] ;
 	float* input0 = interpreter->typed_input_tensor<float>(0)[2] ;
 		
-	const std::vector<int> inputs = interpreter->inputs();
-    const std::vector<int> outputs = interpreter->outputs();
+	# const std::vector<int> inputs = interpreter->inputs();
+    #const std::vector<int> outputs = interpreter->outputs();
 	
 	
 
@@ -43,9 +43,7 @@ int main(){
     	std::cout << "output(0) name: " << interpreter->GetOutputName(0) << "\r\n";
 	std::cout << "output(1) name: " << interpreter->GetOutputName(1) << "\r\n";
 	
-	
-	
-	
+		
     interpreter->Invoke();
 	
     float* output0 = interpreter->typed_output_tensor<float>(0)[0];
