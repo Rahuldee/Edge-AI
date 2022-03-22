@@ -20,11 +20,10 @@ python3 -m venv ~/tflite
 source ~/tflite/bin/activate
 
 # Clone the TensorFlow example repository with the TFLite Raspberry Pi samples.
-git clone https://github.com/tensorflow/examples.git
-cd examples/lite/examples/object_detection/raspberry_pi
+git clone https://github.com/Rahuldee/Edge-AI/Lab-7
+cd Lab-7
 
 # Install dependencies required by the sample
-sh setup.sh
+pip3 install tflite-runtime
 
 # Run the object detection sample
-python detect.py
