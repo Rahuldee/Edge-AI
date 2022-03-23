@@ -23,6 +23,6 @@ source ~/tflite/bin/activate
 # Clone the TensorFlow example repository with the TFLite Raspberry Pi samples.
 
 # Install dependencies required by the sample
-pip3 install tflite-runtime
+python3 -m pip install tflite-runtime
 
 # Run the object detection sample
