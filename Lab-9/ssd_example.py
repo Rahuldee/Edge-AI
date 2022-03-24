@@ -96,9 +96,9 @@ label2string = \
 def detect_from_image():
     # prepara input image
     start = time.time()
-    #img_org = cv2.imread('/home/pi/Lab-10-SSD/dog.jpg')
-    #img_org = cv2.imread('/home/pi/Lab-10-SSD/apple.jpeg')
-    img_org = cv2.imread('/home/pi/Lab-10-SSD/car-road.jpg')
+    #img_org = cv2.imread('/home/pi/Edge-AI/Lab-9/dog.jpg')
+    #img_org = cv2.imread('/home/pi/Edge-AI/Lab-9/apple.jpeg')
+    img_org = cv2.imread('/home/pi/Edge-AI/Lab-9/car-road.jpg')
     #	cv2.imshow('image', img)
     img = cv2.cvtColor(img_org, cv2.COLOR_BGR2RGB)
     img = cv2.resize(img, (300, 300))
@@ -110,7 +110,7 @@ def detect_from_image():
     # Load pretrained model:https://tfhub.dev/tensorflow/lite-model/ssd_mobilenet_v1/1/default/1
      
     interpreter = tflite.Interpreter(
-        model_path="/home/pi/Lab-10-SSD/ssd_mobilenet_v1.tflite")
+        model_path="/home/pi/Edge-AI/Lab-9/ssd_mobilenet_v1.tflite")
         
     interpreter.allocate_tensors()
     input_details = interpreter.get_input_details()
